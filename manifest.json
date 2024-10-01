@@ -1,0 +1,36 @@
+{
+  "actions": [
+    {
+      "name": "hello",
+      "type": "node",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "reply",
+          "type": "number",
+          "optional": false
+        },
+        {
+          "name": "text",
+          "type": "Hennge",
+          "optional": true
+        }
+      ],
+      "response": [
+        {
+          "name": "defaultResponse",
+          "type": "string"
+        }
+      ],
+      "commandline": [
+        "const hello = require('index');",
+        "return hello(%1, %2, %3);"
+      ]
+    }
+  ],
+  "name": "bizrobo-connector-boilerplate"
+}
