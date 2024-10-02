@@ -1,7 +1,7 @@
 {
   "actions": [
     {
-      "name": "hello",
+      "name": "greeting",
       "type": "node",
       "parameters": [
         {
@@ -32,8 +32,8 @@
         }
       ],
       "commandline": [
-        "const hello = require('connector');",
-        "return hello(%1, %2, %3, %4);"
+        "const connector = require('connector');",
+        "return connector.greeting(%1, %2, %3, %4);"
       ]
     }
   ],
