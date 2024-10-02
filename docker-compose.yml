@@ -1,0 +1,15 @@
+services:
+  node:
+    # select lts node version 
+    build: .
+    # all files in the working directory will be copied to the container
+    volumes:
+      - .:/usr/src/app
+      - ${BIZROBO_PROJECT_PATH}:/usr/src/Library
+      - ${BIZROBO_CONNECTOR_CACHE_PATH}:/usr/src/Cache
+    working_dir: /usr/src/app
+    # get shell
+    # type "docker compose exec node bash" to get shell
+    tty: true
+    stdin_open: true
+    # command: bash -c "npm install"

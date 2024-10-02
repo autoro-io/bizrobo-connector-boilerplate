@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "description": "Custom Connector Development Boilerplate for NodeJS",
   "main": "connector.js",
-  "config": {
-    "bizrobo_cache_folder_path": "./dist"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "watch": "nodemon --watch 'src/**/*.ts' --exec 'npm run build:all'",
     "generate-manifest": "npx ts-node ./src/generateManifest.ts ./src/connector.ts",
     "copy": "cp dist/* node_modules/",
-    "zip": "zip -r ${npm_package_config_bizrobo_cache_folder_path}/${npm_package_name}.connector ./node_modules ./manifest.json",
-    "clear:bizrobo": "echo 'clear bizrobo cache folder' && rm -rf ${npm_package_config_bizrobo_cache_folder_path}/*",
+    "zip": "zip -r /usr/src/Library/${npm_package_name}.connector ./node_modules ./manifest.json",
+    "clear:bizrobo": "echo 'clear bizrobo cache folder' && rm -rf /usr/src/Cache/*",
     "build:all": "npm run generate-manifest && npm run clear:bizrobo && npm run build && npm run copy && npm run zip"
   },
   "keywords": [

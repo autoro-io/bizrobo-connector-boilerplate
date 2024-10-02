@@ -16,8 +16,13 @@
         },
         {
           "name": "text",
-          "type": "Hennge",
-          "optional": true
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "suff",
+          "type": "string",
+          "optional": false
         }
       ],
       "response": [
@@ -27,8 +32,8 @@
         }
       ],
       "commandline": [
-        "const hello = require('index');",
-        "return hello(%1, %2, %3);"
+        "const hello = require('connector');",
+        "return hello(%1, %2, %3, %4);"
       ]
     }
   ],

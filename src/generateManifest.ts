@@ -67,7 +67,7 @@ function generateManifest(fileNames: string[], options: ts.CompilerOptions): voi
         }
       ],
       commandline: [
-        `const ${symbol.getName()} = require('index');`,
+        `const ${symbol.getName()} = require('connector');`,
         `return ${symbol.getName()}(${commandlineParams});`
       ]
     };

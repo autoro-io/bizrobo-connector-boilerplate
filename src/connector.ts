@@ -1,7 +1,5 @@
-type Hennge = 'hello' | 'end' | 'goodbye';
-
-function hello(name: string, reply: number, text: Hennge = 'hello'): string {
-  const returnString = 'Hello World!' + name + reply;
+function hello(name: string, reply: number, text: string, suff: string): string {
+  const returnString = 'Hello World!' + name + reply + text + suff;
   console.log(returnString);
   console.log('hage');
   return returnString;
