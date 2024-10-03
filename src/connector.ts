@@ -15,6 +15,10 @@ type ZipResponse = {
   status: number;
 }
 
+// Please make sure to set the function definitions at the top level.
+// generate-manifest searches for function definitions.
+// Also, please specify the types each time. They may be reflected in the manifest.
+// The return value may need to be in JSON format...
 async function getAddress(zip: string): Promise<ZipResponse> {
   const url = `https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zip}`;
   const response = await fetch(url);
@@ -22,8 +26,11 @@ async function getAddress(zip: string): Promise<ZipResponse> {
   return json;
 }
 
+// Replace the defined functions with objects.
+
 const zip = {
   getAddress
 };
 
+// export it.
 export = zip;

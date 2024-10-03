@@ -1,6 +1,3 @@
-// jest.mock("../collections/integration-collection");
-// const mockedIntegrationCollection = jest.mocked(IntegrationCollection);
-
 import * as zip from "./connector";
 
 describe("Zip", () => {
