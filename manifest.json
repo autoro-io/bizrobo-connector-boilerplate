@@ -1,34 +1,24 @@
 {
   "actions": [
     {
-      "name": "hello",
+      "name": "getAddress",
       "type": "node",
       "parameters": [
         {
-          "name": "name",
+          "name": "zip",
           "type": "string",
           "optional": false
-        },
-        {
-          "name": "reply",
-          "type": "number",
-          "optional": false
-        },
-        {
-          "name": "text",
-          "type": "Hennge",
-          "optional": true
         }
       ],
       "response": [
         {
           "name": "defaultResponse",
-          "type": "string"
+          "type": "Promise<ZipResponse>"
         }
       ],
       "commandline": [
-        "const hello = require('index');",
-        "return hello(%1, %2, %3);"
+        "const connector = require('connector');",
+        "return connector.getAddress(%1);"
       ]
     }
   ],

@@ -3,17 +3,13 @@
   "version": "1.0.0",
   "description": "Custom Connector Development Boilerplate for NodeJS",
   "main": "connector.js",
-  "config": {
-    "bizrobo_cache_folder_path": "./dist"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest  --silent=false --verbose=false",
     "build": "tsc",
-    "watch": "nodemon --watch 'src/**/*.ts' --exec 'npm run build:all'",
     "generate-manifest": "npx ts-node ./src/generateManifest.ts ./src/connector.ts",
     "copy": "cp dist/* node_modules/",
-    "zip": "zip -r ${npm_package_config_bizrobo_cache_folder_path}/${npm_package_name}.connector ./node_modules ./manifest.json",
-    "clear:bizrobo": "echo 'clear bizrobo cache folder' && rm -rf ${npm_package_config_bizrobo_cache_folder_path}/*",
+    "zip": "zip -r /usr/src/Library/${npm_package_name}.connector ./node_modules ./manifest.json",
+    "clear:bizrobo": "echo 'clear bizrobo cache folder' && rm -rf /usr/src/Cache/*",
     "build:all": "npm run generate-manifest && npm run clear:bizrobo && npm run build && npm run copy && npm run zip"
   },
   "keywords": [
@@ -25,9 +21,15 @@
   "author": "fukuda@autoro.io",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
-    "nodemon": "^3.1.7",
+    "@types/node-fetch": "^2.6.11",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
   }
 }
