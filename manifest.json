@@ -1,26 +1,11 @@
 {
   "actions": [
     {
-      "name": "greeting",
+      "name": "getAddress",
       "type": "node",
       "parameters": [
         {
-          "name": "name",
-          "type": "string",
-          "optional": false
-        },
-        {
-          "name": "reply",
-          "type": "number",
-          "optional": false
-        },
-        {
-          "name": "text",
-          "type": "string",
-          "optional": false
-        },
-        {
-          "name": "suff",
+          "name": "zip",
           "type": "string",
           "optional": false
         }
@@ -28,12 +13,12 @@
       "response": [
         {
           "name": "defaultResponse",
-          "type": "string"
+          "type": "Promise<ZipResponse>"
         }
       ],
       "commandline": [
         "const connector = require('connector');",
-        "return connector.greeting(%1, %2, %3, %4);"
+        "return connector.getAddress(%1);"
       ]
     }
   ],
