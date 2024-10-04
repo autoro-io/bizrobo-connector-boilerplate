@@ -1,4 +1,10 @@
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
+import syncFetch from 'sync-fetch';
+
+type ConnectorOutput = {
+  json: string;
+  html: string;
+}
 
 type ZipResponse = {
   message: null | string;
@@ -19,11 +25,14 @@ type ZipResponse = {
 // generate-manifest searches for function definitions.
 // Also, please specify the types each time. They may be reflected in the manifest.
 // The return value may need to be in JSON format...
-async function getAddress(zip: string): Promise<ZipResponse> {
+function getAddress(zip: string): ConnectorOutput {
   const url = `https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zip}`;
-  const response = await fetch(url);
-  const json = await response.json() as ZipResponse;
-  return json;
+  const response = syncFetch(url);
+  const json = response.json() as ZipResponse;
+  return {
+    json: JSON.stringify(json),
+    html: "<html><body><h1>Some HTML Output</h1></body></html>",
+  };
 }
 
 // Replace the defined functions with objects.

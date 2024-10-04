@@ -3,9 +3,14 @@ import * as zip from "./connector";
 describe("Zip", () => {
   describe("getAddress", () => {
     describe("when zip=7830060", () => {
-      it("returns ZipResponse as JSON with Kochi Prefecture", async () => {
-        const response = await zip.getAddress("7830060");
-        expect(response).toEqual({
+      it("returns object with JSON and HTML", () => {
+        const response = zip.getAddress("7830060");
+        expect(response.hasOwnProperty("json")).toBe(true);
+        expect(response.hasOwnProperty("html")).toBe(true);
+      });
+      it("returns ZipResponse as JSON with Kochi Prefecture", () => {
+        const response = zip.getAddress("7830060");
+        expect(JSON.parse(response.json)).toEqual({
           message: null,
           results: [
             {

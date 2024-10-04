@@ -61,9 +61,17 @@ function generateManifest(fileNames: string[], options: ts.CompilerOptions): voi
       type: "node",
       parameters: parameters,
       response: [
+        // {
+        //   name: "defaultResponse",
+        //   type: checker.typeToString(returnType)
+        // }
         {
-          name: "defaultResponse",
-          type: checker.typeToString(returnType)
+          name: "json",
+          type: "string"
+        },
+        {
+          name: "html",
+          type: "string"
         }
       ],
       commandline: [

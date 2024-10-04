@@ -52,3 +52,5 @@ bizrobo-connector-boilerplate/
 
 - シンプルな関数を実装する方法しか試していません。
 - `#/usr/src/app npm build:all` した後に、Design Studio で再読み込みを行なってください。
+- production で使われない node_module も zip されてしまっています。これは非効率です。こちらもdevDependenciesを省くなどの工夫が可能です。
+- response の定義の仕方が、いまいちわからなく、json と html を必須で返却するように返却値を統一してしまっています。これについては、返却値の型をもとに自動で設定することも可能なので改善の余地ありです。
