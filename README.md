@@ -27,6 +27,7 @@ BizRobo! コネクターを作成するためのテンプレート（ボイラ�
 
 ? がついているアイテムは、追跡されていないので git clone した段階では何もありません。
 
+```
 bizrobo-connector-boilerplate/
 ┣ ?dist/                             TypeScriptをJSにしたものが入る中間フォルダ、追跡せず
 ┣ ?node_modules/                     インストールされた外部パッケージ、追跡せず
@@ -47,7 +48,7 @@ bizrobo-connector-boilerplate/
 ┣ package.json                      依存パッケージ
 ┗ tsconfig.json                     TypeScript　の設定ファイル
 
-
+```
 ## 制限事項
 
 - シンプルな関数を実装する方法しか試していません。
