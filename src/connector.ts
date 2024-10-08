@@ -25,7 +25,7 @@ type ZipResponse = {
 // generate-manifest searches for function definitions.
 // Also, please specify the types each time. They may be reflected in the manifest.
 // The return value may need to be in JSON format...
-function getAddress(zip: string): ConnectorOutput {
+function getAddress(zip: string = "7830060"): ConnectorOutput {
   const url = `https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zip}`;
   const response = syncFetch(url);
   const json = response.json() as ZipResponse;
